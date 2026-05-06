@@ -125,8 +125,8 @@ def test_sequence_with_repeated_kmers():
     # record k-mers and following character counts
     output = count_kmers_with_context(sequence, k)
     # result for substring occuring one time
-    assert output["AT"] == 1
+    assert output["AT"]["count"] == 1
     assert output["AT"]["next_chars"] == {"G": 1}
     # result for substring occuring multiple times
-    assert output["TG"] == 3
-    assert output["TG"]["next_chars"] == {"A": 1, "T": 2}
+    assert output["TG"]["count"] == 3
+    assert output["TG"]["next_chars"] == {"T": 2, "A": 1}
