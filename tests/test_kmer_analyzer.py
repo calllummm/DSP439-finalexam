@@ -1,6 +1,6 @@
 # relevant imports
 import pytest 
-from kmer_analyzer import validate_sequence, update_kmer_count
+from kmer_analyzer import validate_sequence, update_kmer_count, count_kmers_with_context
 
 # basic pytest confirmation
 def test_pytest_working():
@@ -29,7 +29,7 @@ def test_validate_sequence(sequence, k, expected):
     assert validate_sequence(sequence, k) is expected
 
 ##############################
-## update k_mer count tests ##
+## update k-mer count tests ##
 ##############################
 
 # confirm equence is sufficient length and only holds valid characters
@@ -83,3 +83,50 @@ def test_update_kmer_counts_with_new_next_char():
             "next_chars": {"G": 1, "T": 1}
         }
     }
+
+###############################
+## k-mers with context tests ##
+###############################
+
+# confirm correct processing with sequencing lacking sufficient length
+def test_sequence_lacking_context():
+    # sequence test example shrorter than k + 1
+    sequence = "A"
+    k = 2
+    # record k-mers and following character counts
+    output = count_kmers_with_context(sequence, k)
+    # resulting empty dictionary due to insufficient sequence length
+    assert output == {}
+
+# confirm correct processing with sequencing of sufficient length
+def test_sequence_with_sufficient_context():
+    # sequence with one k-mer and following character
+    sequence = "ACGT"
+    k = 2
+    # record k-mers and following character counts
+    output = count_kmers_with_context(sequence, k)
+    # resulting substring and following character counts
+    assert output == {
+        "AC": {
+            "count": 1,
+            "next_chars": {"G": 1}
+        },
+        "CG": {
+            "count": 1,
+            "next_chars": {"T": 1}
+        }
+    }
+
+# confirm correct processing with k-mers and following characters observed multiple times
+def test_sequence_with_repeated_kmers():
+    # sequence from assignment example
+    sequence = "ATGTCTGTCTGAA"
+    k = 2
+    # record k-mers and following character counts
+    output = count_kmers_with_context(sequence, k)
+    # result for substring occuring one time
+    assert output["AT"] == 1
+    assert output["AT"]["next_chars"] == {"G": 1}
+    # result for substring occuring multiple times
+    assert output["TG"] == 3
+    assert output["TG"]["next_chars"] == {"A": 1, "T": 2}
