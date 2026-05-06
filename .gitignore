@@ -2,5 +2,6 @@
 __pycache__/
 .pytest_cache/
 .venv/
-.vscode/
 .vscode
+.DS_Store
+output.txt
