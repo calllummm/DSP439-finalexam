@@ -167,7 +167,8 @@ def test_write_results_to_file(tmp_path):
 ## main function tests ##
 #########################
 
-def test_main_counts_acros_multiple_sequences(tmp_path):
+# test to create sample file with expected test format, process through main function
+def test_main_counts_across_multiple_sequences(tmp_path):
     # create temporary input file with two part sequences
     input_file = tmp_path / "input.txt"
     input_file.write_text("ACGT\nATGTCTGTCTGAA\n")

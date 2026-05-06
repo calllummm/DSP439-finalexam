@@ -56,6 +56,10 @@ def main():
     
     print(f"Reading sequences from {sequence_file}...")
 
+    # small addition
+    # dictionary holding cumulative k-mer data counts
+    all_kmer_data = {}
+
     with open(sequence_file, 'r') as f:
         for sequence in f:
             sequence = sequence.strip()
@@ -64,9 +68,25 @@ def main():
                 print(f"  Warning: Skipping sequence")
                 continue
             
-            kmer_data = count_kmers_with_context(sequence, k) 
+            ## kmer_data = count_kmers_with_context(sequence, k) ## not included now
             
-            write_results_to_file(kmer_data, output_file)
+        # large addition
+        # specifically count current k-mer seuqneces
+        sequence_kmer_data = count_kmers_with_context(sequence, k)
+        # merge current sequence counts into cumulative dictionary
+        for kmer, data in sequence_kmer_data.items():
+            if kmer not in all_kmer_data:
+                all_kmer_data[kmer] = {'count': 0, 'next_chars': {}}
+            # add counts from current sequence to cumulative dictionary
+            all_kmer_data[kmer]['count'] += data['count']
+            # add next character counts from current sequence to cumulative dictionary
+            for next_char, freq in data['next_chars'].items():
+                if next_char not in all_kmer_data[kmer]['next_chars']:
+                    all_kmer_data[kmer]['next_chars'][next_char] = 0
+                all_kmer_data[kmer]['next_chars'][next_char] += freq
+        # small revision
+        # output progress after each sequence is processed
+        write_results_to_file
 
 if __name__ == '__main__':
     main()
