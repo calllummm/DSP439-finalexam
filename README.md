@@ -42,4 +42,4 @@ Here is a brief overview of the project structure:
 - key: (1) parent folder, (2) subfolders / primary files, (3) secondary files
 
 AI use statement:
-I used Perplexity AI mainly to help me troubleshoot bugs and improve the quality of documentation. I also used it to design at paremetrize function that I found on the pytest documentation website.
+I used Perplexity AI mainly to help me troubleshoot bugs and improve the quality of documentation. I also used it to provide test cases for the paremetrize function that I found on the pytest documentation website.
