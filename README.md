@@ -41,4 +41,4 @@ Project Structure:
     - README.md                   # read me file
 
 AI use statement:
-I used Perplexity AI to help me troubleshoot bugs and improve the quality of documentation. I also used it to provide test cases for the paremetrize function that I found on the pytest documentation website.
+I used Perplexity AI to help me troubleshoot bugs and improve the quality of documentation. I also used it to provide test cases for the parametrize function that I found on the pytest documentation website.
