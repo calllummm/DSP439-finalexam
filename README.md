@@ -2,7 +2,7 @@
 
 This project synthesizes pieces of genomic sequences from an input file and determines how often each k-mer exists and the characters that succeed each k-mer across all sequences contained within the input file. This was effectively the final exam for my BIO / DSP 439 class (Big Data Analysis).
 
-## Breakdown
+## Project Breakdown
 
 Important features:
   - text file containing example DNA sequences
