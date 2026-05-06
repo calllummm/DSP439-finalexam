@@ -186,4 +186,12 @@ def test_main_counts_across_multiple_sequences(tmp_path):
     # read file contents
     contents = output_file.read_text()
     # expected file contents with sorted k-mers and next characters from both sequences
-    assert contents == ("AC G:1\nAT G:1\nCG T:1\nCT G:2\nGT C:2\nTG A:1 T:2\n")
+    assert contents == ("AC G:1\n"
+        "AT G:1\n"
+        "CG T:1\n"
+        "CT G:2\n"
+        "GA A:1\n"
+        "GT C:2\n"
+        "TC T:2\n"
+        "TG A:1 T:2\n"
+    )
