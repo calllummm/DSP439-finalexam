@@ -32,12 +32,12 @@ Then run tests using this command:
 python -m pytest
 
 Here is a brief overview of the project structure:
-DSP439-exam4/                   # parent folder
-├── kmer_analyzer.py            # main script
-├── example_sequences.txt       # example input file
-├── tests/                      # tests folder
-│   └── test_kmer_analyzer.py   # pytest test suite
-└── README.md                   # read me file
+DSP439-exam4/                 # parent folder
+  kmer_analyzer.py            # main script
+  example_sequences.txt       # example input file
+  tests/                      # tests folder
+    test_kmer_analyzer.py     # pytest test suite
+  README.md                   # read me file
 
 AI use statement:
 I used Perplexity AI mainly to help me troubleshoot bugs and improve the quality of documentation. I also used it to design at paremetrize function that I found on the pytest documentation website.
