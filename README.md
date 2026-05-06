@@ -31,7 +31,8 @@ ATGTCTGTCTGAA
 Then run tests using this command:
 python -m pytest
 
-Here is a brief overview of the project structure:
+Project Structure:
+
   - DSP439-exam4/                 # parent folder
     - kmer_analyzer.py            # main script
     - example_sequences.txt       # example input file
