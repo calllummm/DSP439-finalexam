@@ -5,14 +5,14 @@ This project synthesizes pieces of genomic sequences from an input file and dete
 ## Breakdown
 
 Important features:
-  (1) text file containing example DNA sequences
-  (2) output filename performed through script
+  - text file containing example DNA sequences
+  - output filename performed through script
 
 Script functionality:
-  (1) validates given sequences
-  (2) counts overlapping k-mers and subsequent sequences
-  (3) combines counts across every sequence in a given file
-  (4) write new lines for each k-mer in a standardized format
+  - validates given sequences
+  - counts overlapping k-mers and subsequent sequences
+  - combines counts across every sequence in a given file
+  - write new lines for each k-mer in a standardized format
       (ex. k = 2 -> TG A:1 T:2)
 
 Running tests:
@@ -39,7 +39,7 @@ Here is a brief overview of the project structure:
     (3) test_kmer_analyzer.py     # pytest test suite
   (2) README.md                   # read me file
 
-- key: (1) parent folder, (2) subfolders / primary files, (3) secondary files
+  - key: (1) parent folder, (2) subfolders / primary files, (3) secondary files
 
 AI use statement:
 I used Perplexity AI mainly to help me troubleshoot bugs and improve the quality of documentation. I also used it to provide test cases for the paremetrize function that I found on the pytest documentation website.
