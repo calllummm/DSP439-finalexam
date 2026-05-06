@@ -2,6 +2,11 @@
 import pytest 
 from kmer_analyzer import validate_sequence, update_kmer_count
 
+# basic pytest confirmation
+def test_pytest_working():
+    assert True
+
+
 # dynamic test functionality through parametrize
 @pytest.mark.parametrize(
     "sequence,k,expected",
@@ -18,6 +23,14 @@ from kmer_analyzer import validate_sequence, update_kmer_count
 #############################
 ## validate sequence tests ##
 #############################
+
+# testing basic genomic 
+def test_validate_sequence(sequence, k, expected):
+    assert validate_sequence(sequence, k) is expected
+
+##############################
+## update k_mer count tests ##
+##############################
 
 # confirm equence is sufficient length and only holds valid characters
 def test_update_correct_kmer_counts():
@@ -70,7 +83,3 @@ def test_update_kmer_counts_with_new_next_char():
             "next_chars": {"G": 1, "T": 1}
         }
     }
-
-# basic pytest confirmation
-def test_pytest_working():
-    assert True

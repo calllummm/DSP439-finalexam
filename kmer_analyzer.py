@@ -10,7 +10,9 @@ def validate_sequence(sequence, k):
 
 def update_kmer_count(kmer_data, kmer, next_char):
     if kmer not in kmer_data:
-        kmer_data[kmer] = {'count': 1, 'next_chars': {}}
+        # small revision
+        # initiatize k_mer as if it is not seen prior to observation
+        kmer_data[kmer] = {'count': 0, 'next_chars': {}}
     
     kmer_data[kmer]['count'] += 1
     
