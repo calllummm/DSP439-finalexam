@@ -7,8 +7,11 @@ from kmer_analyzer import validate_sequence
     "sequence,k,expected",
     [
         ("ACGT", 2, True),
+        ("ATGTCTGTCTGAA", 2, True),
         ("A", 2, False),
+        ("", 1, False),
         ("AC1T", 2, False),
+        ("1234", 2, False),
     ],
 )
 
