@@ -4,10 +4,6 @@ This project synthesizes pieces of genomic sequences from an input file and dete
 
 ## Project Breakdown
 
-Important features:
-  - text file containing example DNA sequences
-  - output filename performed through script
-
 Script functionality:
   - validates given sequences
   - counts overlapping k-mers and subsequent sequences
@@ -31,7 +27,7 @@ ATGTCTGTCTGAA
 Then run tests using this command:
 python -m pytest
 
-Project Structure:
+Project structure:
 
   - DSP439-exam4/                 # parent folder
     - kmer_analyzer.py            # main script
